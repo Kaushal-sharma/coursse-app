@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-courses [item]="course_data" (courseEmitt) = "onSelectedCourse($event)" *ngIf="courseHideShow else lessionBlock"></app-courses>
+      <ng-template #lessionBlock>
+        <app-lessions [lession]="lession" (back)="onSelectedBack($event)" ></app-lessions>
+      </ng-template>
+
+      <app-contents></app-contents>
+    </div>
+  </div>
+</div>
